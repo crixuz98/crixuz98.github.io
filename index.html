@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio de Crixuz enfocado en robótica, inteligencia artificial y sistemas interactivos.">
+    <meta name="description" content="Portafolio JERR enfocado en robótica, inteligencia artificial y sistemas interactivos.">
     <meta name="theme-color" content="#03070d">
 
-    <title>Crixuz Lab | Robótica e IA</title>
+    <title>JERR Lab | Robótica e IA</title>
 
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css?v=20260717.3">
+    <script src="js/script.js?v=20260717.3" defer></script>
 </head>
 
 <body class="is-booting">
@@ -17,7 +17,7 @@
 
     <div class="boot-screen" id="boot-screen" aria-live="polite">
         <div class="boot-grid" aria-hidden="true"></div>
-        <div class="boot-corner boot-corner-tl">CRX // BOOT_SEQUENCE</div>
+        <div class="boot-corner boot-corner-tl">JERR // BOOT_SEQUENCE</div>
         <div class="boot-corner boot-corner-tr">SYS.2026</div>
         <div class="boot-corner boot-corner-bl">ROBOTICS × AI</div>
         <div class="boot-corner boot-corner-br" id="boot-percent">000%</div>
@@ -25,7 +25,7 @@
         <div class="boot-center">
             <div class="boot-core" aria-hidden="true"><span></span><i></i></div>
             <p class="tech-label">INITIALIZING PERSONAL LAB</p>
-            <h1>CRIXUZ<span>_</span></h1>
+            <h1>JERR<span>_</span></h1>
             <p class="boot-message" id="boot-message">Verificando módulos...</p>
             <div class="boot-track" aria-hidden="true"><span id="boot-bar"></span></div>
             <button class="boot-skip" id="boot-skip" type="button">Saltar introducción</button>
@@ -39,7 +39,7 @@
         <nav class="navbar container" aria-label="Navegación principal">
             <a class="brand" href="#inicio" aria-label="Volver al inicio">
                 <span class="brand-symbol" aria-hidden="true"><i></i></span>
-                <span class="brand-copy"><strong>CRIXUZ</strong><small>PERSONAL LAB</small></span>
+                <span class="brand-copy"><strong>JERR</strong><small>PERSONAL LAB</small></span>
             </a>
 
             <div class="system-status" aria-label="Sistema en línea">
@@ -117,7 +117,7 @@
                     <div class="core-center">
                         <span></span>
                         <i></i>
-                        <b>CRX</b>
+                        <b>JERR</b>
                     </div>
                 </div>
 
@@ -150,15 +150,15 @@
                         <small>SECURE</small>
                     </div>
                     <div class="terminal-body">
-                        <p><b>crx@lab:~$</b> identify --profile</p>
-                        <p class="terminal-output">→ Nombre público: <strong>Crixuz</strong></p>
+                        <p><b>jerr@lab:~$</b> identify --profile</p>
+                        <p class="terminal-output">→ Identidad pública: <strong>JERR</strong></p>
                         <p class="terminal-output">→ Rol actual: <strong>PhD Student</strong></p>
                         <p class="terminal-output">→ Misión: <strong>Aprender · Construir · Documentar</strong></p>
-                        <p><b>crx@lab:~$</b> scan --interests</p>
+                        <p><b>jerr@lab:~$</b> scan --interests</p>
                         <div class="terminal-tags">
                             <span>ROBOTICS</span><span>AI</span><span>AUTOMATION</span><span>CODING</span>
                         </div>
-                        <p class="terminal-cursor"><b>crx@lab:~$</b> <span></span></p>
+                        <p class="terminal-cursor"><b>jerr@lab:~$</b> <span></span></p>
                     </div>
                 </div>
             </div>
@@ -273,8 +273,9 @@
                     <article class="system-card system-card-featured reveal">
                         <div class="system-visual robot-visual" aria-hidden="true">
                             <div class="radar-lines"></div>
-                            <div class="robot-face">
-                                <span></span><span></span><i></i>
+                            <div class="robot-face" data-expression="neutral">
+                                <span class="robot-eye"><b></b></span><span class="robot-eye"><b></b></span>
+                                <i class="robot-mouth"></i><small>JERR</small>
                             </div>
                             <div class="tracking-box"><span>OBJECT_01</span></div>
                             <p>VISION_FEED // 24 FPS</p>
@@ -289,11 +290,12 @@
                     </article>
 
                     <article class="system-card reveal">
-                        <div class="system-visual ai-visual" aria-hidden="true">
+                        <div class="system-visual ai-visual" id="agent-simulation" aria-hidden="true">
                             <div class="ai-grid"></div>
-                            <div class="ai-node ai-node-a"></div><div class="ai-node ai-node-b"></div><div class="ai-node ai-node-c"></div>
-                            <div class="ai-path path-a"></div><div class="ai-path path-b"></div>
-                            <p>NEURAL_MAP // LEARNING</p>
+                            <span class="agent-goal">GOAL</span>
+                            <i class="agent-obstacle obstacle-a"></i><i class="agent-obstacle obstacle-b"></i><i class="agent-obstacle obstacle-c"></i>
+                            <b class="agent-dot agent-dot-a"></b><b class="agent-dot agent-dot-b"></b><b class="agent-dot agent-dot-c"></b><b class="agent-dot agent-dot-d"></b><b class="agent-dot agent-dot-e"></b>
+                            <p>AGENT_FIELD // AVOIDANCE ACTIVE</p>
                         </div>
                         <div class="system-copy">
                             <div class="system-meta"><span>CONCEPTO 002</span><b>PLANIFICADO</b></div>
@@ -304,9 +306,25 @@
                     </article>
 
                     <article class="system-card reveal">
-                        <div class="system-visual automation-visual" aria-hidden="true">
-                            <div class="flow-node">INPUT</div><i></i><div class="flow-node">LOGIC</div><i></i><div class="flow-node">ACTION</div>
-                            <p>AUTOMATION_FLOW // READY</p>
+                        <div class="system-visual automation-visual stage-0" id="automation-flow" aria-hidden="true">
+                            <div class="automation-canvas">
+                                <div class="flow-node flow-input" data-stage="0">INPUT</div>
+                                <i class="flow-link link-input-logic" data-stage="0"></i>
+                                <div class="flow-node flow-logic" data-stage="0">LOGIC</div>
+                                <i class="flow-link link-logic-action" data-stage="0"></i>
+                                <div class="flow-node flow-action" data-stage="0">ACTION</div>
+                                <div class="flow-node flow-filter" data-stage="1">FILTER</div>
+                                <i class="flow-link link-filter" data-stage="1"></i>
+                                <div class="flow-node flow-data" data-stage="1">DATA</div>
+                                <i class="flow-link link-data" data-stage="1"></i>
+                                <div class="flow-node flow-api" data-stage="2">API</div>
+                                <i class="flow-link link-api" data-stage="2"></i>
+                                <div class="flow-node flow-monitor" data-stage="2">MONITOR</div>
+                                <i class="flow-link link-monitor" data-stage="2"></i>
+                                <span class="feedback-loop" data-stage="3">FEEDBACK</span>
+                            </div>
+                            <span class="automation-phase" id="automation-phase">STAGE 01 / CORE FLOW</span>
+                            <p>AUTOMATION_FLOW // BUILDING</p>
                         </div>
                         <div class="system-copy">
                             <div class="system-meta"><span>CONCEPTO 003</span><b>PLANIFICADO</b></div>
@@ -332,7 +350,7 @@
 
             <a class="book-preview" href="archivo.html" aria-label="Abrir el libro de proyectos">
                 <div class="book-cover">
-                    <span>CRX // ARCHIVE</span>
+                    <span>JERR // ARCHIVE</span>
                     <div class="book-core" aria-hidden="true"><i></i><b></b></div>
                     <h3>FIELD<br>NOTES</h3>
                     <p>ROBOTICS · AI · SYSTEMS</p>
@@ -377,7 +395,7 @@
         <div class="container footer-grid">
             <a class="brand" href="#inicio">
                 <span class="brand-symbol" aria-hidden="true"><i></i></span>
-                <span class="brand-copy"><strong>CRIXUZ</strong><small>PERSONAL LAB</small></span>
+                <span class="brand-copy"><strong>JERR</strong><small>PERSONAL LAB</small></span>
             </a>
             <p>ROBÓTICA · INTELIGENCIA ARTIFICIAL · AUTOMATIZACIÓN</p>
             <p>© <span id="current-year"></span> / BUILD <span id="build-time">00:00:00</span></p>

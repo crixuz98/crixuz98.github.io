@@ -1,4 +1,4 @@
-# Crixuz Personal Lab
+# JERR Personal Lab
 
 Portafolio estático enfocado en robótica, inteligencia artificial, automatización y sistemas interactivos.
 

@@ -275,6 +275,159 @@ hero.addEventListener("pointerleave", () => {
     pointer = { x: -1000, y: -1000 };
 });
 
+// Robot expresivo: la mirada sigue el puntero y el rostro cambia ocasionalmente.
+const robotVisual = document.querySelector(".robot-visual");
+const robotFace = document.querySelector(".robot-face");
+
+function updateRobotGaze(event) {
+    if (!robotFace) return;
+    const bounds = robotFace.getBoundingClientRect();
+    const centerX = bounds.left + bounds.width / 2;
+    const centerY = bounds.top + bounds.height / 2;
+    const deltaX = Math.max(-1, Math.min(1, (event.clientX - centerX) / (window.innerWidth * 0.35)));
+    const deltaY = Math.max(-1, Math.min(1, (event.clientY - centerY) / (window.innerHeight * 0.35)));
+    robotFace.style.setProperty("--eye-x", `${(deltaX * 8).toFixed(2)}px`);
+    robotFace.style.setProperty("--eye-y", `${(deltaY * 5).toFixed(2)}px`);
+}
+
+if (robotFace && !reduceMotion) {
+    window.addEventListener("pointermove", updateRobotGaze, { passive: true });
+    const robotExpressions = ["neutral", "smile", "serious", "curious", "smile"];
+    window.setInterval(() => {
+        const expression = robotExpressions[Math.floor(Math.random() * robotExpressions.length)];
+        robotFace.dataset.expression = expression;
+        window.setTimeout(() => {
+            robotFace.dataset.expression = "neutral";
+        }, 1700);
+    }, 4600);
+}
+
+if (robotVisual) {
+    robotVisual.addEventListener("pointerleave", () => {
+        robotFace?.style.setProperty("--eye-x", "0px");
+        robotFace?.style.setProperty("--eye-y", "0px");
+    });
+}
+
+// Simulación ligera de agentes: buscan una meta, se separan y evitan obstáculos.
+const agentField = document.querySelector("#agent-simulation");
+const agentElements = agentField ? [...agentField.querySelectorAll(".agent-dot")] : [];
+const obstacleElements = agentField ? [...agentField.querySelectorAll(".agent-obstacle")] : [];
+const goalElement = agentField?.querySelector(".agent-goal");
+let agentStates = [];
+let agentObstacles = [];
+let agentGoal = { x: 0, y: 0 };
+
+function configureAgentField() {
+    if (!agentField || !agentElements.length) return;
+    const bounds = agentField.getBoundingClientRect();
+    const positions = [[0.12, 0.27], [0.25, 0.63], [0.46, 0.18], [0.66, 0.58], [0.78, 0.34]];
+
+    agentStates = agentElements.map((element, index) => ({
+        element,
+        x: positions[index][0] * bounds.width,
+        y: positions[index][1] * bounds.height,
+        vx: (index % 2 ? -0.42 : 0.46) + index * 0.025,
+        vy: (index % 3 - 1) * 0.28 + 0.16
+    }));
+
+    agentObstacles = obstacleElements.map((obstacle) => {
+        const obstacleBounds = obstacle.getBoundingClientRect();
+        return {
+            x: obstacleBounds.left - bounds.left + obstacleBounds.width / 2,
+            y: obstacleBounds.top - bounds.top + obstacleBounds.height / 2,
+            radius: Math.max(obstacleBounds.width, obstacleBounds.height) * 0.58
+        };
+    });
+
+    if (goalElement) {
+        const goalBounds = goalElement.getBoundingClientRect();
+        agentGoal = {
+            x: goalBounds.left - bounds.left + goalBounds.width / 2,
+            y: goalBounds.top - bounds.top + goalBounds.height / 2
+        };
+    }
+}
+
+function animateAgentField() {
+    if (!agentField || !agentStates.length) return;
+    const width = agentField.clientWidth;
+    const height = agentField.clientHeight;
+
+    agentStates.forEach((agent, index) => {
+        let steeringX = (agentGoal.x - agent.x) * 0.000035;
+        let steeringY = (agentGoal.y - agent.y) * 0.000035;
+
+        agentStates.forEach((other, otherIndex) => {
+            if (index === otherIndex) return;
+            const dx = agent.x - other.x;
+            const dy = agent.y - other.y;
+            const distance = Math.hypot(dx, dy) || 1;
+            if (distance < 48) {
+                const force = (48 - distance) * 0.0014;
+                steeringX += (dx / distance) * force;
+                steeringY += (dy / distance) * force;
+            }
+        });
+
+        agentObstacles.forEach((obstacle) => {
+            const dx = agent.x - obstacle.x;
+            const dy = agent.y - obstacle.y;
+            const distance = Math.hypot(dx, dy) || 1;
+            const safeDistance = obstacle.radius + 24;
+            if (distance < safeDistance) {
+                const force = (safeDistance - distance) * 0.0028;
+                steeringX += (dx / distance) * force;
+                steeringY += (dy / distance) * force;
+            }
+        });
+
+        agent.vx += steeringX;
+        agent.vy += steeringY;
+        const speed = Math.hypot(agent.vx, agent.vy) || 1;
+        const maximumSpeed = 0.72;
+        if (speed > maximumSpeed) {
+            agent.vx = (agent.vx / speed) * maximumSpeed;
+            agent.vy = (agent.vy / speed) * maximumSpeed;
+        }
+
+        agent.x += agent.vx;
+        agent.y += agent.vy;
+        if (agent.x < 12 || agent.x > width - 30) agent.vx *= -1;
+        if (agent.y < 18 || agent.y > height - 42) agent.vy *= -1;
+        agent.x = Math.max(12, Math.min(width - 30, agent.x));
+        agent.y = Math.max(18, Math.min(height - 42, agent.y));
+        agent.element.style.transform = `translate3d(${agent.x.toFixed(1)}px, ${agent.y.toFixed(1)}px, 0)`;
+    });
+
+    requestAnimationFrame(animateAgentField);
+}
+
+configureAgentField();
+if (agentField && !reduceMotion) animateAgentField();
+window.addEventListener("resize", configureAgentField);
+
+// El diagrama crece por etapas hasta mostrar un ciclo completo con retroalimentación.
+const automationFlow = document.querySelector("#automation-flow");
+const automationPhase = document.querySelector("#automation-phase");
+const automationLabels = ["STAGE 01 / CORE FLOW", "STAGE 02 / DATA LAYER", "STAGE 03 / SERVICES", "STAGE 04 / FEEDBACK LOOP"];
+let automationStage = 0;
+
+function showAutomationStage(stage) {
+    if (!automationFlow) return;
+    automationFlow.classList.remove("stage-0", "stage-1", "stage-2", "stage-3");
+    automationFlow.classList.add(`stage-${stage}`);
+    if (automationPhase) automationPhase.textContent = automationLabels[stage];
+}
+
+showAutomationStage(automationStage);
+if (automationFlow && !reduceMotion) {
+    window.setInterval(() => {
+        automationStage = (automationStage + 1) % automationLabels.length;
+        showAutomationStage(automationStage);
+    }, 2600);
+}
+
 // Profundidad y luz reactiva para dispositivos con puntero preciso.
 if (!reduceMotion && window.matchMedia("(pointer: fine)").matches) {
     const machine = document.querySelector("#hero-machine");

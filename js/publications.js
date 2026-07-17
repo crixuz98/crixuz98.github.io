@@ -52,8 +52,8 @@ function renderPaper(index, animate = true) {
     paperStage.classList.remove("is-turning");
     void paperStage.offsetWidth;
     paperStage.classList.add("is-turning");
-    window.setTimeout(update, 280);
-    window.setTimeout(() => paperStage.classList.remove("is-turning"), 650);
+    window.setTimeout(update, 405);
+    window.setTimeout(() => paperStage.classList.remove("is-turning"), 850);
 }
 
 function renderFolder(key) {

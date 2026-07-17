@@ -1,7 +1,7 @@
 const memories = {
     lab: {
         code: "MEMORY_001 / JUL_2026",
-        title: "Nace Crixuz Personal Lab.",
+        title: "Nace JERR Personal Lab.",
         text: "Se establece el repositorio principal y una identidad digital enfocada en robótica, inteligencia artificial, automatización y programación. Este es el primer registro real del anuario.",
         tags: ["PORTAFOLIO", "GITHUB PAGES", "INICIO"]
     },

@@ -12,7 +12,7 @@ const fieldSpreads = [
     {
         left: `
             <div class="page-layout book-cover-page">
-                <p class="page-number"><span>CRX_ARCHIVE</span><span>VOL.001</span></p>
+                <p class="page-number"><span>JERR_ARCHIVE</span><span>VOL.001</span></p>
                 <div class="book-emblem"><span>2026</span></div>
                 <div>
                     <h3>FIELD<br><span>NOTES</span></h3>
@@ -127,7 +127,7 @@ const fieldSpreads = [
         right: `
             <div class="page-layout">
                 <p class="page-number"><span>END_RECORD</span><span>10</span></p>
-                <div class="closing-mark"><span>CRX</span></div>
+                <div class="closing-mark"><span>JERR</span></div>
                 <p class="page-kicker">Fin del registro actual</p>
                 <h3>Lo siguiente todavía no está escrito.</h3>
                 <p>Cada proyecto real añadirá nuevas páginas con código, fotografías del prototipo, pruebas y conclusiones.</p>
@@ -149,7 +149,7 @@ const books = {
             {
                 left: `
                     <div class="page-layout book-cover-page">
-                        <p class="page-number"><span>CRX_ARCHIVE</span><span>VOL.002</span></p>
+                        <p class="page-number"><span>JERR_ARCHIVE</span><span>VOL.002</span></p>
                         <div class="book-emblem"><span>AI</span></div>
                         <div><h3>ARTIFICIAL<br><span>INTELLIGENCE</span></h3><p>VISION · DEEP LEARNING · ANFIS</p></div>
                     </div>`,
@@ -197,7 +197,7 @@ const books = {
             {
                 left: `
                     <div class="page-layout book-cover-page">
-                        <p class="page-number"><span>CRX_ARCHIVE</span><span>VOL.003</span></p>
+                        <p class="page-number"><span>JERR_ARCHIVE</span><span>VOL.003</span></p>
                         <div class="book-emblem"><span>RX</span></div>
                         <div><h3>ROBOTIC<br><span>SYSTEMS</span></h3><p>PERCEPTION · CONTROL · MOTION</p></div>
                     </div>`,
@@ -241,7 +241,7 @@ const books = {
             {
                 left: `
                     <div class="page-layout book-cover-page">
-                        <p class="page-number"><span>CRX_ARCHIVE</span><span>VOL.004</span></p>
+                        <p class="page-number"><span>JERR_ARCHIVE</span><span>VOL.004</span></p>
                         <div class="book-emblem"><span>&lt;/&gt;</span></div>
                         <div><h3>CODE<br><span>NOTEBOOK</span></h3><p>ALGORITHMS · SOFTWARE · TOOLS</p></div>
                     </div>`,
@@ -337,7 +337,7 @@ function moveBook(direction) {
 shelfBooks.forEach((shelfBook) => {
     shelfBook.addEventListener("click", () => {
         const nextBookKey = shelfBook.dataset.book;
-        if (!books[nextBookKey]) return;
+        if (!books[nextBookKey] || shelfBook.classList.contains("is-opening")) return;
 
         activeBookKey = nextBookKey;
         currentSpread = 0;
@@ -351,7 +351,19 @@ shelfBooks.forEach((shelfBook) => {
         activeVolumeLabel.textContent = `ARCHIVE_READER / ${activeBook.volume}`;
         bookTitle.textContent = activeBook.title;
         renderSpread(currentSpread);
-        document.querySelector("#libro").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+
+        if (reduceMotion) {
+            document.querySelector("#libro").scrollIntoView({ behavior: "auto", block: "start" });
+            return;
+        }
+
+        shelfBook.classList.remove("is-opening");
+        void shelfBook.offsetWidth;
+        shelfBook.classList.add("is-opening");
+        window.setTimeout(() => {
+            document.querySelector("#libro").scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 560);
+        window.setTimeout(() => shelfBook.classList.remove("is-opening"), 860);
     });
 });
 
