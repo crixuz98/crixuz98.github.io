@@ -52,10 +52,11 @@
             </button>
 
             <div class="nav-links" id="nav-links">
-                <a href="#perfil">Perfil</a>
-                <a href="#enfoque">Enfoque</a>
-                <a href="#sistemas">Sistemas</a>
-                <a href="archivo.html">Archivo</a>
+                <a href="#enfoque">Exploración</a>
+                <a href="archivo.html">Biblioteca</a>
+                <a href="anuario.html">Anuario</a>
+                <a href="publicaciones.html">Publicaciones</a>
+                <a href="aula.html">Aula</a>
             </div>
 
             <a class="nav-cta" href="#contacto">Conectar <span aria-hidden="true">↗</span></a>
@@ -151,11 +152,11 @@
                     <div class="terminal-body">
                         <p><b>crx@lab:~$</b> identify --profile</p>
                         <p class="terminal-output">→ Nombre público: <strong>Crixuz</strong></p>
-                        <p class="terminal-output">→ Rol actual: <strong>Explorador tecnológico</strong></p>
+                        <p class="terminal-output">→ Rol actual: <strong>PhD Student</strong></p>
                         <p class="terminal-output">→ Misión: <strong>Aprender · Construir · Documentar</strong></p>
                         <p><b>crx@lab:~$</b> scan --interests</p>
                         <div class="terminal-tags">
-                            <span>ROBOTICS</span><span>AI</span><span>AUTOMATION</span><span>WEB</span>
+                            <span>ROBOTICS</span><span>AI</span><span>AUTOMATION</span><span>CODING</span>
                         </div>
                         <p class="terminal-cursor"><b>crx@lab:~$</b> <span></span></p>
                     </div>
@@ -177,63 +178,83 @@
 
             <div class="module-list">
                 <article class="module-row reveal" data-progress="34">
-                    <div class="module-id">M.01</div>
-                    <div class="module-icon" aria-hidden="true"><span class="robot-icon-head"></span><i></i></div>
-                    <div class="module-copy">
-                        <p>HARDWARE + CONTROL</p>
-                        <h3>Robótica</h3>
-                        <span>Sensores · Actuadores · Control · Prototipado</span>
+                    <button class="module-trigger" type="button" aria-expanded="false" aria-controls="robotics-details">
+                        <span class="module-id">M.01</span>
+                        <span class="module-icon" aria-hidden="true"><span class="robot-icon-head"></span><i></i></span>
+                        <span class="module-copy"><small>HARDWARE + CONTROL</small><strong>Robótica</strong><em>Sensores · Actuadores · Control · Prototipado</em></span>
+                        <span class="module-load"><span><i></i></span><small><b>34</b>% / EN PROGRESO</small></span>
+                        <span class="module-arrow" aria-hidden="true">+</span>
+                    </button>
+                    <div class="module-details" id="robotics-details">
+                        <div class="module-detail-head"><p>PLATAFORMAS ROBÓTICAS</p><span>CONTADORES DEMO / PUBLICACIONES</span></div>
+                        <ul>
+                            <li><span>Manipuladores</span><b data-random-count data-min="2" data-max="18">00</b></li>
+                            <li><span>Móviles diferenciales</span><b data-random-count data-min="3" data-max="22">00</b></li>
+                            <li><span>Móviles omnidireccionales</span><b data-random-count data-min="4" data-max="20">00</b></li>
+                            <li><span>Drones</span><b data-random-count data-min="1" data-max="15">00</b></li>
+                            <li><span>Submarinos</span><b data-random-count data-min="0" data-max="9">00</b></li>
+                            <li><span>Ackermann</span><b data-random-count data-min="2" data-max="14">00</b></li>
+                        </ul>
                     </div>
-                    <div class="module-load">
-                        <div><span></span></div>
-                        <p><strong>34</strong>% / EN PROGRESO</p>
-                    </div>
-                    <span class="module-arrow" aria-hidden="true">↗</span>
                 </article>
 
                 <article class="module-row reveal" data-progress="47">
-                    <div class="module-id">M.02</div>
-                    <div class="module-icon neural-icon" aria-hidden="true"><span></span><i></i><b></b></div>
-                    <div class="module-copy">
-                        <p>DATA + MODELS</p>
-                        <h3>Inteligencia artificial</h3>
-                        <span>Machine Learning · Visión · Agentes · Datos</span>
+                    <button class="module-trigger" type="button" aria-expanded="false" aria-controls="ai-details">
+                        <span class="module-id">M.02</span>
+                        <span class="module-icon neural-icon" aria-hidden="true"><span></span><i></i><b></b></span>
+                        <span class="module-copy"><small>DATA + MODELS</small><strong>Inteligencia artificial</strong><em>Modelos · Percepción · Aprendizaje · Datos</em></span>
+                        <span class="module-load"><span><i></i></span><small><b>47</b>% / EN PROGRESO</small></span>
+                        <span class="module-arrow" aria-hidden="true">+</span>
+                    </button>
+                    <div class="module-details" id="ai-details">
+                        <div class="module-detail-head"><p>LÍNEAS DE INTELIGENCIA ARTIFICIAL</p><span>CONTADORES DEMO / PUBLICACIONES</span></div>
+                        <ul>
+                            <li><span>Visión artificial</span><b data-random-count data-min="4" data-max="24">00</b></li>
+                            <li><span>Deep Learning</span><b data-random-count data-min="3" data-max="20">00</b></li>
+                            <li><span>Redes convolucionales</span><b data-random-count data-min="2" data-max="17">00</b></li>
+                            <li><span>ANFIS</span><b data-random-count data-min="1" data-max="12">00</b></li>
+                        </ul>
                     </div>
-                    <div class="module-load">
-                        <div><span></span></div>
-                        <p><strong>47</strong>% / EN PROGRESO</p>
-                    </div>
-                    <span class="module-arrow" aria-hidden="true">↗</span>
                 </article>
 
                 <article class="module-row reveal" data-progress="58">
-                    <div class="module-id">M.03</div>
-                    <div class="module-icon automation-icon" aria-hidden="true"><span>⚡</span></div>
-                    <div class="module-copy">
-                        <p>LOGIC + WORKFLOWS</p>
-                        <h3>Automatización</h3>
-                        <span>Integraciones · Procesos · APIs · Optimización</span>
+                    <button class="module-trigger" type="button" aria-expanded="false" aria-controls="automation-details">
+                        <span class="module-id">M.03</span>
+                        <span class="module-icon automation-icon" aria-hidden="true"><span>⚡</span></span>
+                        <span class="module-copy"><small>LOGIC + WORKFLOWS</small><strong>Automatización</strong><em>Integración · Control · Procesos · Optimización</em></span>
+                        <span class="module-load"><span><i></i></span><small><b>58</b>% / EN PROGRESO</small></span>
+                        <span class="module-arrow" aria-hidden="true">+</span>
+                    </button>
+                    <div class="module-details" id="automation-details">
+                        <div class="module-detail-head"><p>ÁREAS DE AUTOMATIZACIÓN</p><span>CONTADORES DEMO / PUBLICACIONES</span></div>
+                        <ul>
+                            <li><span>Control industrial</span><b data-random-count data-min="2" data-max="16">00</b></li>
+                            <li><span>Instrumentación</span><b data-random-count data-min="1" data-max="14">00</b></li>
+                            <li><span>Automatización de procesos</span><b data-random-count data-min="3" data-max="19">00</b></li>
+                            <li><span>Integración ROS</span><b data-random-count data-min="2" data-max="15">00</b></li>
+                            <li><span>Gemelos digitales</span><b data-random-count data-min="0" data-max="10">00</b></li>
+                        </ul>
                     </div>
-                    <div class="module-load">
-                        <div><span></span></div>
-                        <p><strong>58</strong>% / EN PROGRESO</p>
-                    </div>
-                    <span class="module-arrow" aria-hidden="true">↗</span>
                 </article>
 
                 <article class="module-row reveal" data-progress="72">
-                    <div class="module-id">M.04</div>
-                    <div class="module-icon web-icon" aria-hidden="true">&lt;/&gt;</div>
-                    <div class="module-copy">
-                        <p>INTERFACE + MOTION</p>
-                        <h3>Desarrollo web</h3>
-                        <span>HTML · CSS · JavaScript · Experiencias interactivas</span>
+                    <button class="module-trigger" type="button" aria-expanded="false" aria-controls="coding-details">
+                        <span class="module-id">M.04</span>
+                        <span class="module-icon web-icon" aria-hidden="true">&lt;/&gt;</span>
+                        <span class="module-copy"><small>ALGORITHMS + SOFTWARE</small><strong>Coding</strong><em>Lenguajes · Algoritmos · Simulación · Herramientas</em></span>
+                        <span class="module-load"><span><i></i></span><small><b>72</b>% / EN PROGRESO</small></span>
+                        <span class="module-arrow" aria-hidden="true">+</span>
+                    </button>
+                    <div class="module-details" id="coding-details">
+                        <div class="module-detail-head"><p>LENGUAJES</p><span>CONTADORES DEMO / PUBLICACIONES</span></div>
+                        <ul>
+                            <li><span>C</span><b data-random-count data-min="2" data-max="18">00</b></li>
+                            <li><span>C++</span><b data-random-count data-min="4" data-max="24">00</b></li>
+                            <li><span>Java</span><b data-random-count data-min="1" data-max="13">00</b></li>
+                            <li><span>MATLAB / .m</span><b data-random-count data-min="3" data-max="20">00</b></li>
+                            <li><span>Python</span><b data-random-count data-min="5" data-max="28">00</b></li>
+                        </ul>
                     </div>
-                    <div class="module-load">
-                        <div><span></span></div>
-                        <p><strong>72</strong>% / EN PROGRESO</p>
-                    </div>
-                    <span class="module-arrow" aria-hidden="true">↗</span>
                 </article>
             </div>
         </section>
@@ -301,10 +322,10 @@
         <section class="section archive-teaser container reveal" aria-labelledby="archive-title">
             <div class="archive-copy">
                 <p class="overline"><span>05</span> PROJECT_ARCHIVE</p>
-                <h2 id="archive-title">Cada proyecto merece una bitácora.</h2>
+                <h2 id="archive-title">Cada proyecto merece su propio libro.</h2>
                 <p>
-                    El archivo conserva ideas, decisiones, errores y aprendizajes en un libro técnico
-                    interactivo. Una memoria viva del proceso, no solo del resultado.
+                    La biblioteca comienza con cuatro volúmenes y crecerá con cada proyecto: bitácora
+                    general, inteligencia artificial, robótica y programación.
                 </p>
                 <a class="button button-primary" href="archivo.html">Entrar al archivo <i aria-hidden="true">↗</i></a>
             </div>
@@ -321,10 +342,28 @@
             </a>
         </section>
 
+        <section class="section ecosystem-section" id="ecosistema" aria-labelledby="ecosystem-title">
+            <div class="container">
+                <div class="section-heading section-heading-row reveal">
+                    <div>
+                        <p class="overline"><span>06</span> KNOWLEDGE_ECOSYSTEM</p>
+                        <h2 id="ecosystem-title">Más que un portafolio.</h2>
+                    </div>
+                    <p>Cuatro espacios conectados para preservar proyectos, recuerdos, publicaciones y material educativo.</p>
+                </div>
+                <div class="portal-grid">
+                    <a class="portal-card reveal" href="archivo.html"><span>01</span><small>PROJECT LIBRARY</small><h3>Biblioteca</h3><p>Un libro interactivo por proyecto o línea de trabajo.</p><i>↗</i></a>
+                    <a class="portal-card reveal" href="anuario.html"><span>02</span><small>MEMORY TIMELINE</small><h3>Anuario</h3><p>Recuerdos, hitos y momentos importantes organizados por año.</p><i>↗</i></a>
+                    <a class="portal-card reveal" href="publicaciones.html"><span>03</span><small>PAPER ARCHIVE</small><h3>Hemeroteca</h3><p>Carpetas temáticas con artículos, resúmenes y enlaces de consulta.</p><i>↗</i></a>
+                    <a class="portal-card reveal" href="aula.html"><span>04</span><small>LEARNING HUB</small><h3>Aula</h3><p>Guías, presentaciones, videos, manuales y tareas.</p><i>↗</i></a>
+                </div>
+            </div>
+        </section>
+
         <section class="section contact-section" id="contacto" aria-labelledby="contact-title">
             <div class="contact-scan" aria-hidden="true"></div>
             <div class="container contact-inner reveal">
-                <p class="overline"><span>06</span> OPEN_CHANNEL</p>
+                <p class="overline"><span>07</span> OPEN_CHANNEL</p>
                 <h2 id="contact-title">La siguiente idea<br>puede comenzar <em>ahora.</em></h2>
                 <p>Sigue la evolución del laboratorio y consulta el código detrás de cada experimento.</p>
                 <a class="button button-primary magnetic" href="https://github.com/crixuz98" target="_blank" rel="noopener noreferrer">

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hemeroteca interactiva de publicaciones de robótica, inteligencia artificial y automatización de Crixuz.">
+    <meta name="theme-color" content="#050a0f">
+    <title>Hemeroteca | Crixuz Lab</title>
+    <link rel="stylesheet" href="css/portal.css">
+    <script src="js/publications.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#carpetas">Saltar a las publicaciones</a>
+    <header class="portal-header">
+        <a class="portal-brand" href="index.html"><span>←</span> CRX // PERSONAL LAB</a>
+        <nav class="portal-nav" aria-label="Navegación secundaria">
+            <a href="archivo.html">Biblioteca</a><a href="anuario.html">Anuario</a><a href="publicaciones.html" aria-current="page">Publicaciones</a><a href="aula.html">Aula</a>
+        </nav>
+        <p class="portal-status">PAPER DATABASE ONLINE</p>
+    </header>
+
+    <main>
+        <section class="portal-hero">
+            <div class="portal-hero-inner">
+                <p class="eyebrow">PAPER_DATABASE / TOPIC_FILES</p>
+                <h1>Hemeroteca<br><em>de investigación.</em></h1>
+                <p class="portal-hero-text">Un archivo temático para reunir artículos, abstracts y enlaces de consulta. Cada carpeta representa una línea de trabajo y cada hoja, una publicación.</p>
+                <div class="hero-meta"><span>CARPETAS TEMÁTICAS</span><span>ABSTRACTS</span><span>ENLACES ACADÉMICOS</span></div>
+            </div>
+        </section>
+
+        <section class="portal-section" id="carpetas">
+            <div class="portal-section-inner">
+                <div class="section-heading">
+                    <div><small>01 / TOPIC_ARCHIVE</small><h2>Selecciona una carpeta.</h2></div>
+                    <p>Pasa el cursor para levantar las hojas; abre una carpeta y después elige un artículo.</p>
+                </div>
+                <p class="demo-notice"><strong>CONTENIDO DEMOSTRATIVO</strong> Los títulos y abstracts actuales son ejemplos de interfaz. Se sustituirán por tus publicaciones y enlaces reales.</p>
+
+                <div class="folder-grid" aria-label="Carpetas de publicaciones">
+                    <button class="topic-folder is-active" type="button" data-folder="omni">
+                        <span class="folder-back"></span><span class="folder-sheet"></span><span class="folder-sheet"></span><span class="folder-sheet"></span>
+                        <span class="folder-front"><small>FILE / R.OMNI</small><strong>Robots<br>omnidireccionales</strong><span>02 ARTÍCULOS DEMO</span></span>
+                    </button>
+                    <button class="topic-folder" type="button" data-folder="manipulators">
+                        <span class="folder-back"></span><span class="folder-sheet"></span><span class="folder-sheet"></span><span class="folder-sheet"></span>
+                        <span class="folder-front"><small>FILE / R.MANIP</small><strong>Manipuladores<br>robóticos</strong><span>02 ARTÍCULOS DEMO</span></span>
+                    </button>
+                    <button class="topic-folder" type="button" data-folder="vision">
+                        <span class="folder-back"></span><span class="folder-sheet"></span><span class="folder-sheet"></span><span class="folder-sheet"></span>
+                        <span class="folder-front"><small>FILE / AI.VISION</small><strong>IA y visión<br>artificial</strong><span>02 ARTÍCULOS DEMO</span></span>
+                    </button>
+                    <button class="topic-folder" type="button" data-folder="automation">
+                        <span class="folder-back"></span><span class="folder-sheet"></span><span class="folder-sheet"></span><span class="folder-sheet"></span>
+                        <span class="folder-front"><small>FILE / A.CONTROL</small><strong>Automatización<br>y control</strong><span>02 ARTÍCULOS DEMO</span></span>
+                    </button>
+                </div>
+
+                <div class="publication-reader" id="lector">
+                    <aside class="article-list-panel">
+                        <p>ACTIVE_FOLDER</p>
+                        <h3 id="folder-title">Robots omnidireccionales</h3>
+                        <div class="article-list" id="article-list"></div>
+                    </aside>
+                    <div class="paper-stage" id="paper-stage">
+                        <article class="publication-paper" id="publication-paper" aria-live="polite"></article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="portal-footer"><p>CRIXUZ PERSONAL LAB / PAPER DATABASE</p><p><a href="index.html">VOLVER AL LAB ↗</a></p></footer>
+</body>
+</html>

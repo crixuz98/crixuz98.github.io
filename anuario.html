@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anuario de momentos importantes, aprendizajes e hitos de Crixuz Personal Lab.">
+    <meta name="theme-color" content="#050a0f">
+    <title>Anuario | Crixuz Lab</title>
+    <link rel="stylesheet" href="css/portal.css">
+    <script src="js/annual.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#memorias">Saltar a las memorias</a>
+    <header class="portal-header">
+        <a class="portal-brand" href="index.html"><span>←</span> CRX // PERSONAL LAB</a>
+        <nav class="portal-nav" aria-label="Navegación secundaria">
+            <a href="archivo.html">Biblioteca</a><a href="anuario.html" aria-current="page">Anuario</a><a href="publicaciones.html">Publicaciones</a><a href="aula.html">Aula</a>
+        </nav>
+        <p class="portal-status">MEMORY CORE ONLINE</p>
+    </header>
+
+    <main>
+        <section class="portal-hero">
+            <div class="portal-hero-inner">
+                <p class="eyebrow">MEMORY_CORE / ANNUAL_LOG</p>
+                <h1>Momentos que<br><em>merecen memoria.</em></h1>
+                <p class="portal-hero-text">Un anuario para conservar hitos académicos, prototipos, viajes, equipos, aprendizajes y pequeñas victorias detrás del trabajo técnico.</p>
+                <div class="hero-meta"><span>ORDEN CRONOLÓGICO</span><span>HISTORIAS + IMÁGENES</span><span>CRECIMIENTO CONTINUO</span></div>
+            </div>
+        </section>
+
+        <section class="portal-section" id="memorias">
+            <div class="portal-section-inner">
+                <div class="section-heading">
+                    <div><small>01 / TIMELINE</small><h2>Historial personal.</h2></div>
+                    <p>Selecciona un registro para consultar su historia. Las ranuras vacías muestran cómo crecerá el anuario.</p>
+                </div>
+                <div class="year-filter" aria-label="Filtrar recuerdos por año">
+                    <button type="button" class="is-active" data-year="all">TODOS</button>
+                    <button type="button" data-year="2026">2026</button>
+                    <button type="button" data-year="future">PRÓXIMOS</button>
+                </div>
+                <div class="annual-layout">
+                    <div class="timeline-rail" id="memory-list">
+                        <button class="memory-card is-active" type="button" data-memory="lab" data-year="2026">
+                            <time datetime="2026-07">JUL / 2026</time><span><strong>Nace Crixuz Personal Lab</strong>El portafolio comienza a tomar forma.</span><i>↗</i>
+                        </button>
+                        <button class="memory-card is-placeholder" type="button" data-memory="prototype" data-year="future">
+                            <time>PRÓXIMO</time><span><strong>Primer prototipo documentado</strong>Ranura preparada para fotografías y resultados.</span><i>+</i>
+                        </button>
+                        <button class="memory-card is-placeholder" type="button" data-memory="publication" data-year="future">
+                            <time>PRÓXIMO</time><span><strong>Publicación destacada</strong>Espacio para conservar el contexto detrás del artículo.</span><i>+</i>
+                        </button>
+                        <button class="memory-card is-placeholder" type="button" data-memory="milestone" data-year="future">
+                            <time>PRÓXIMO</time><span><strong>Hito académico</strong>Un lugar para recordar el proceso, no solo el resultado.</span><i>+</i>
+                        </button>
+                    </div>
+                    <article class="memory-detail" id="memory-detail" aria-live="polite">
+                        <p class="detail-code">MEMORY_001 / JUL_2026</p>
+                        <h3>Nace Crixuz Personal Lab.</h3>
+                        <p>Se establece el repositorio principal y una identidad digital enfocada en robótica, inteligencia artificial, automatización y programación. Este es el primer registro real del anuario.</p>
+                        <div class="detail-tags"><span>PORTAFOLIO</span><span>GITHUB PAGES</span><span>INICIO</span></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="portal-footer"><p>CRIXUZ PERSONAL LAB / ANUARIO</p><p><a href="index.html">VOLVER AL LAB ↗</a></p></footer>
+</body>
+</html>

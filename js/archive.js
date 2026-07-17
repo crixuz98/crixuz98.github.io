@@ -8,7 +8,7 @@ const spreadIndicator = document.querySelector("#spread-indicator");
 const currentPages = document.querySelector("#current-pages");
 const progressBar = document.querySelector("#book-progress-bar");
 
-const spreads = [
+const fieldSpreads = [
     {
         left: `
             <div class="page-layout book-cover-page">
@@ -136,30 +136,183 @@ const spreads = [
     }
 ];
 
+const books = {
+    field: {
+        title: "Field Notes",
+        volume: "VOL.001",
+        spreads: fieldSpreads
+    },
+    ai: {
+        title: "Artificial Intelligence",
+        volume: "VOL.002",
+        spreads: [
+            {
+                left: `
+                    <div class="page-layout book-cover-page">
+                        <p class="page-number"><span>CRX_ARCHIVE</span><span>VOL.002</span></p>
+                        <div class="book-emblem"><span>AI</span></div>
+                        <div><h3>ARTIFICIAL<br><span>INTELLIGENCE</span></h3><p>VISION · DEEP LEARNING · ANFIS</p></div>
+                    </div>`,
+                right: `
+                    <div class="page-layout">
+                        <p class="page-number"><span>VOLUME_SCOPE</span><span>02</span></p>
+                        <p class="page-kicker">Mapa de investigación</p>
+                        <h3>Modelos que perciben y aprenden.</h3>
+                        <div class="stack-grid">
+                            <div class="stack-card"><small>AI.01</small><strong>Visión artificial</strong><span>Adquisición, detección y seguimiento.</span></div>
+                            <div class="stack-card"><small>AI.02</small><strong>Deep Learning</strong><span>Entrenamiento, evaluación e inferencia.</span></div>
+                            <div class="stack-card"><small>AI.03</small><strong>Redes convolucionales</strong><span>Características espaciales y clasificación.</span></div>
+                            <div class="stack-card"><small>AI.04</small><strong>ANFIS</strong><span>Aprendizaje y lógica difusa adaptativa.</span></div>
+                        </div>
+                        <p class="ink-note">Volumen base: se completará con experimentos, métricas y publicaciones reales.</p>
+                    </div>`
+            },
+            {
+                left: `
+                    <div class="page-layout">
+                        <p class="page-number"><span>EXPERIMENT_TEMPLATE</span><span>03</span></p>
+                        <p class="page-kicker">Plantilla de experimento</p>
+                        <h3>Del conjunto de datos a la evidencia.</h3>
+                        <div class="timeline">
+                            <div class="timeline-item"><small>01 / DATA</small><h4>Preparación</h4><p>Origen, limpieza, balance y separación de datos.</p></div>
+                            <div class="timeline-item"><small>02 / MODEL</small><h4>Entrenamiento</h4><p>Arquitectura, hiperparámetros y criterios de parada.</p></div>
+                            <div class="timeline-item"><small>03 / TEST</small><h4>Evaluación</h4><p>Métricas, errores y comparación reproducible.</p></div>
+                        </div>
+                    </div>`,
+                right: `
+                    <div class="page-layout">
+                        <p class="page-number"><span>NEXT_RECORD</span><span>04</span></p>
+                        <p class="page-kicker">Próxima entrada</p>
+                        <h3>Espacio reservado para el primer proyecto de IA.</h3>
+                        <span class="status-stamp is-planned">POR DOCUMENTAR</span>
+                        <div class="project-brief"><div><small>Contenido esperado</small><p>Objetivo, método, datos, resultados, código y conclusiones.</p></div><div><small>Estado</small><p>La estructura existe; el proyecto real se añadirá más adelante.</p></div></div>
+                    </div>`
+            }
+        ]
+    },
+    robotics: {
+        title: "Robotic Systems",
+        volume: "VOL.003",
+        spreads: [
+            {
+                left: `
+                    <div class="page-layout book-cover-page">
+                        <p class="page-number"><span>CRX_ARCHIVE</span><span>VOL.003</span></p>
+                        <div class="book-emblem"><span>RX</span></div>
+                        <div><h3>ROBOTIC<br><span>SYSTEMS</span></h3><p>PERCEPTION · CONTROL · MOTION</p></div>
+                    </div>`,
+                right: `
+                    <div class="page-layout">
+                        <p class="page-number"><span>PLATFORM_INDEX</span><span>02</span></p>
+                        <p class="page-kicker">Plataformas</p>
+                        <h3>Robots bajo exploración.</h3>
+                        <div class="archive-index">
+                            <div><b>R.01</b><strong>Manipuladores</strong><span>CATÁLOGO</span></div>
+                            <div><b>R.02</b><strong>Móviles diferenciales</strong><span>CATÁLOGO</span></div>
+                            <div><b>R.03</b><strong>Omnidireccionales</strong><span>CATÁLOGO</span></div>
+                            <div><b>R.04</b><strong>Drones y submarinos</strong><span>CATÁLOGO</span></div>
+                            <div><b>R.05</b><strong>Dirección Ackermann</strong><span>CATÁLOGO</span></div>
+                        </div>
+                    </div>`
+            },
+            {
+                left: `
+                    <div class="page-layout">
+                        <p class="page-number"><span>ROBOT_RECORD</span><span>03</span></p>
+                        <p class="page-kicker">Ficha de sistema</p>
+                        <h3>Una página para cada máquina.</h3>
+                        <div class="project-brief"><div><small>Cinemática</small><p>Modelo, marcos de referencia y restricciones.</p></div><div><small>Control</small><p>Arquitectura, sensores, actuadores y frecuencia.</p></div><div><small>Validación</small><p>Trayectorias, error, estabilidad y evidencia visual.</p></div></div>
+                    </div>`,
+                right: `
+                    <div class="page-layout">
+                        <p class="page-number"><span>NEXT_RECORD</span><span>04</span></p>
+                        <p class="page-kicker">Próximo prototipo</p>
+                        <h3>Espacio reservado para la primera plataforma documentada.</h3>
+                        <span class="status-stamp is-planned">POR DOCUMENTAR</span>
+                        <p class="ink-note">Este libro crecerá con diagramas, fotografías, pruebas, código y resultados.</p>
+                    </div>`
+            }
+        ]
+    },
+    coding: {
+        title: "Code Notebook",
+        volume: "VOL.004",
+        spreads: [
+            {
+                left: `
+                    <div class="page-layout book-cover-page">
+                        <p class="page-number"><span>CRX_ARCHIVE</span><span>VOL.004</span></p>
+                        <div class="book-emblem"><span>&lt;/&gt;</span></div>
+                        <div><h3>CODE<br><span>NOTEBOOK</span></h3><p>ALGORITHMS · SOFTWARE · TOOLS</p></div>
+                    </div>`,
+                right: `
+                    <div class="page-layout">
+                        <p class="page-number"><span>LANGUAGE_INDEX</span><span>02</span></p>
+                        <p class="page-kicker">Lenguajes</p>
+                        <h3>Código para experimentar y construir.</h3>
+                        <div class="stack-grid">
+                            <div class="stack-card"><small>LOW LEVEL</small><strong>C / C++</strong><span>Control, embebidos y rendimiento.</span></div>
+                            <div class="stack-card"><small>APPLICATION</small><strong>Java</strong><span>Arquitecturas y aplicaciones.</span></div>
+                            <div class="stack-card"><small>ENGINEERING</small><strong>MATLAB / .m</strong><span>Modelado, análisis y simulación.</span></div>
+                            <div class="stack-card"><small>COMPUTING</small><strong>Python</strong><span>IA, automatización y prototipado.</span></div>
+                        </div>
+                    </div>`
+            },
+            {
+                left: `
+                    <div class="page-layout">
+                        <p class="page-number"><span>CODE_RECORD</span><span>03</span></p>
+                        <p class="page-kicker">Registro técnico</p>
+                        <h3>Más que un fragmento de código.</h3>
+                        <ol class="manual-list"><li><div><strong>Problema</strong>Qué debe resolver el programa.</div></li><li><div><strong>Decisiones</strong>Por qué se eligió la solución.</div></li><li><div><strong>Pruebas</strong>Casos, límites y resultados.</div></li><li><div><strong>Repositorio</strong>Fuente y guía de ejecución.</div></li></ol>
+                    </div>`,
+                right: `
+                    <div class="page-layout">
+                        <p class="page-number"><span>NEXT_RECORD</span><span>04</span></p>
+                        <p class="page-kicker">Próximo algoritmo</p>
+                        <h3>Espacio reservado para la primera implementación explicada.</h3>
+                        <span class="status-stamp is-planned">POR DOCUMENTAR</span>
+                        <p class="ink-note">Cada entrada futura enlazará su repositorio y explicará cómo reproducirla.</p>
+                    </div>`
+            }
+        ]
+    }
+};
+
 let currentSpread = 0;
 let isTurning = false;
 let pointerStartX = null;
+let activeBookKey = "field";
+
+const shelfBooks = document.querySelectorAll(".shelf-book");
+const activeVolumeLabel = document.querySelector("#active-volume-label");
+const bookTitle = document.querySelector("#book-title");
+
+function getActiveBook() {
+    return books[activeBookKey];
+}
 
 function pageNumber(value) {
     return String(value).padStart(2, "0");
 }
 
 function renderSpread(index) {
-    const spread = spreads[index];
+    const activeBook = getActiveBook();
+    const spread = activeBook.spreads[index];
     const firstPage = index * 2 + 1;
 
     leftPage.innerHTML = spread.left;
     rightPage.innerHTML = spread.right;
-    spreadIndicator.textContent = `PLIEGO ${pageNumber(index + 1)} / ${pageNumber(spreads.length)}`;
+    spreadIndicator.textContent = `PLIEGO ${pageNumber(index + 1)} / ${pageNumber(activeBook.spreads.length)}`;
     currentPages.textContent = `${pageNumber(firstPage)} — ${pageNumber(firstPage + 1)}`;
-    progressBar.style.width = `${((index + 1) / spreads.length) * 100}%`;
+    progressBar.style.width = `${((index + 1) / activeBook.spreads.length) * 100}%`;
     previousButton.disabled = index === 0;
-    nextButton.disabled = index === spreads.length - 1;
+    nextButton.disabled = index === activeBook.spreads.length - 1;
 }
 
 function moveBook(direction) {
     const nextSpread = currentSpread + direction;
-    if (isTurning || nextSpread < 0 || nextSpread >= spreads.length) return;
+    if (isTurning || nextSpread < 0 || nextSpread >= getActiveBook().spreads.length) return;
 
     if (reduceMotion) {
         currentSpread = nextSpread;
@@ -180,6 +333,27 @@ function moveBook(direction) {
         isTurning = false;
     }, 640);
 }
+
+shelfBooks.forEach((shelfBook) => {
+    shelfBook.addEventListener("click", () => {
+        const nextBookKey = shelfBook.dataset.book;
+        if (!books[nextBookKey]) return;
+
+        activeBookKey = nextBookKey;
+        currentSpread = 0;
+        shelfBooks.forEach((candidate) => {
+            const isSelected = candidate === shelfBook;
+            candidate.classList.toggle("is-selected", isSelected);
+            candidate.setAttribute("aria-pressed", String(isSelected));
+        });
+
+        const activeBook = getActiveBook();
+        activeVolumeLabel.textContent = `ARCHIVE_READER / ${activeBook.volume}`;
+        bookTitle.textContent = activeBook.title;
+        renderSpread(currentSpread);
+        document.querySelector("#libro").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+    });
+});
 
 previousButton.addEventListener("click", () => moveBook(-1));
 nextButton.addEventListener("click", () => moveBook(1));

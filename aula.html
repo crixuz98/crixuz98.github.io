@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aula digital de Crixuz con guías, presentaciones, videos, manuales y tareas.">
+    <meta name="theme-color" content="#050a0f">
+    <title>Aula | Crixuz Lab</title>
+    <link rel="stylesheet" href="css/portal.css">
+    <script src="js/classroom.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#recursos">Saltar a los recursos</a>
+    <header class="portal-header">
+        <a class="portal-brand" href="index.html"><span>←</span> CRX // PERSONAL LAB</a>
+        <nav class="portal-nav" aria-label="Navegación secundaria">
+            <a href="archivo.html">Biblioteca</a><a href="anuario.html">Anuario</a><a href="publicaciones.html">Publicaciones</a><a href="aula.html" aria-current="page">Aula</a>
+        </nav>
+        <p class="portal-status">LEARNING HUB ONLINE</p>
+    </header>
+
+    <main>
+        <section class="portal-hero">
+            <div class="portal-hero-inner">
+                <p class="eyebrow">LEARNING_HUB / OPEN_RESOURCES</p>
+                <h1>Aprender haciendo.<br><em>Enseñar documentando.</em></h1>
+                <p class="portal-hero-text">Un espacio didáctico para compartir guías, presentaciones, videos, manuales y tareas sobre robótica, IA, automatización y programación.</p>
+                <div class="hero-meta"><span>RECURSOS ABIERTOS</span><span>DESCARGAS</span><span>APRENDIZAJE PRÁCTICO</span></div>
+            </div>
+        </section>
+
+        <section class="portal-section" id="recursos">
+            <div class="portal-section-inner">
+                <div class="section-heading">
+                    <div><small>01 / RESOURCE_LIBRARY</small><h2>Recursos didácticos.</h2></div>
+                    <p>Filtra el catálogo por formato. Los módulos actuales preparan el espacio para el material que publicarás.</p>
+                </div>
+                <p class="demo-notice"><strong>CATÁLOGO INICIAL</strong> Los recursos marcados como “próximamente” son plantillas y todavía no contienen archivos descargables.</p>
+                <div class="resource-filter" aria-label="Filtrar recursos por tipo">
+                    <button type="button" class="is-active" data-filter="all">TODOS</button>
+                    <button type="button" data-filter="guide">GUÍAS</button>
+                    <button type="button" data-filter="presentation">PRESENTACIONES</button>
+                    <button type="button" data-filter="video">VIDEOS</button>
+                    <button type="button" data-filter="manual">MANUALES</button>
+                    <button type="button" data-filter="assignment">TAREAS</button>
+                </div>
+
+                <div class="resource-grid" id="resource-grid">
+                    <a class="resource-card" data-type="guide" data-status="ready" href="assets/docs/README.md">
+                        <span class="resource-type"><span>GUÍA</span><span>DOC.001</span></span><span class="resource-icon">TXT</span>
+                        <h3>Cómo organizar los recursos del Aula</h3><p>Convenciones para agregar documentos y enlazarlos desde esta página.</p>
+                        <span class="resource-action"><span>ABRIR DOCUMENTO ↗</span><span>DISPONIBLE</span></span>
+                    </a>
+                    <article class="resource-card" data-type="presentation" data-status="pending">
+                        <span class="resource-type"><span>PRESENTACIÓN</span><span>SLD.001</span></span><span class="resource-icon">PPT</span>
+                        <h3>Introducción a sistemas robóticos</h3><p>Plantilla para una presentación sobre percepción, decisión y actuación.</p>
+                        <span class="resource-action"><span>ARCHIVO PENDIENTE</span><span>PRÓXIMAMENTE</span></span>
+                    </article>
+                    <article class="resource-card" data-type="video" data-status="pending">
+                        <span class="resource-type"><span>VIDEO</span><span>VID.001</span></span><span class="resource-icon">▶</span>
+                        <h3>Cinemática de un robot diferencial</h3><p>Espacio para una explicación visual acompañada por ejemplos.</p>
+                        <span class="resource-action"><span>ENLACE PENDIENTE</span><span>PRÓXIMAMENTE</span></span>
+                    </article>
+                    <article class="resource-card" data-type="manual" data-status="pending">
+                        <span class="resource-type"><span>MANUAL</span><span>MAN.001</span></span><span class="resource-icon">PDF</span>
+                        <h3>Preparación de un entorno de programación</h3><p>Plantilla para instalación, configuración, pruebas y solución de errores.</p>
+                        <span class="resource-action"><span>ARCHIVO PENDIENTE</span><span>PRÓXIMAMENTE</span></span>
+                    </article>
+                    <article class="resource-card" data-type="assignment" data-status="pending">
+                        <span class="resource-type"><span>TAREA</span><span>TSK.001</span></span><span class="resource-icon">01</span>
+                        <h3>Diseño de un controlador de trayectoria</h3><p>Espacio para objetivo, instrucciones, entregables y rúbrica.</p>
+                        <span class="resource-action"><span>ACTIVIDAD PENDIENTE</span><span>PRÓXIMAMENTE</span></span>
+                    </article>
+                    <article class="resource-card" data-type="guide" data-status="pending">
+                        <span class="resource-type"><span>GUÍA</span><span>DOC.002</span></span><span class="resource-icon">PY</span>
+                        <h3>Primer experimento de visión artificial</h3><p>Plantilla práctica para datos, código, resultados y reflexión.</p>
+                        <span class="resource-action"><span>ARCHIVO PENDIENTE</span><span>PRÓXIMAMENTE</span></span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="portal-section">
+            <div class="portal-section-inner upload-guide">
+                <div><p class="eyebrow">02 / PUBLISH_WORKFLOW</p><h2>Cómo agregar nuevo material.</h2></div>
+                <div class="guide-steps">
+                    <div class="guide-step"><b>01</b><div><strong>Guarda el archivo</strong><p>Colócalo dentro de <code>assets/docs/</code> con un nombre corto y descriptivo.</p></div></div>
+                    <div class="guide-step"><b>02</b><div><strong>Crea su tarjeta</strong><p>Duplica una tarjeta de recurso en <code>aula.html</code> y cambia tipo, título y descripción.</p></div></div>
+                    <div class="guide-step"><b>03</b><div><strong>Agrega el enlace</strong><p>Convierte la tarjeta en enlace usando la ruta del archivo o la URL de tu video.</p></div></div>
+                    <div class="guide-step"><b>04</b><div><strong>Publica con GitHub</strong><p>Confirma los cambios y súbelos a la rama <code>main</code>; GitHub Pages actualizará el Aula.</p></div></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="portal-footer"><p>CRIXUZ PERSONAL LAB / LEARNING HUB</p><p><a href="index.html">VOLVER AL LAB ↗</a></p></footer>
+</body>
+</html>

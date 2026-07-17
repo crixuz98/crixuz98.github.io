@@ -27,11 +27,11 @@
 
     <main>
         <section class="archive-intro">
-            <p class="archive-kicker">PROJECT HISTORY / FIELD NOTES / VOL.001</p>
-            <h1>Bitácora de<br><em>sistemas futuros.</em></h1>
+            <p class="archive-kicker">PROJECT LIBRARY / FIELD NOTES / MULTI-VOLUME</p>
+            <h1>Biblioteca de<br><em>proyectos vivos.</em></h1>
             <p>
-                Un archivo vivo para documentar el proceso completo: hipótesis, prototipos,
-                decisiones, fallos, resultados y próximos pasos.
+                Cada proyecto puede convertirse en un libro independiente para conservar hipótesis,
+                prototipos, decisiones, fallos, resultados y próximos pasos.
             </p>
             <div class="archive-instructions">
                 <span>← → PARA NAVEGAR</span>
@@ -40,11 +40,34 @@
             </div>
         </section>
 
+        <section class="library-section" id="biblioteca" aria-labelledby="library-title">
+            <div class="library-heading">
+                <div><p>VOLUME_SELECTOR</p><h2 id="library-title">Elige un volumen.</h2></div>
+                <span>04 LIBROS INICIALES / CRECIMIENTO CONTINUO</span>
+            </div>
+            <div class="library-shelf">
+                <button class="shelf-book is-selected" type="button" data-book="field" aria-pressed="true">
+                    <span class="book-top"></span><small>VOL.001</small><strong>FIELD<br>NOTES</strong><em>Laboratorio general</em><i>2026</i>
+                </button>
+                <button class="shelf-book shelf-book-ai" type="button" data-book="ai" aria-pressed="false">
+                    <span class="book-top"></span><small>VOL.002</small><strong>ARTIFICIAL<br>INTELLIGENCE</strong><em>Modelos y aprendizaje</em><i>2026</i>
+                </button>
+                <button class="shelf-book shelf-book-robotics" type="button" data-book="robotics" aria-pressed="false">
+                    <span class="book-top"></span><small>VOL.003</small><strong>ROBOTIC<br>SYSTEMS</strong><em>Máquinas en movimiento</em><i>2026</i>
+                </button>
+                <button class="shelf-book shelf-book-code" type="button" data-book="coding" aria-pressed="false">
+                    <span class="book-top"></span><small>VOL.004</small><strong>CODE<br>NOTEBOOK</strong><em>Algoritmos y software</em><i>2026</i>
+                </button>
+                <div class="shelf-base" aria-hidden="true"></div>
+            </div>
+            <p class="library-note">Estos volúmenes son la estructura inicial. Cuando exista un proyecto nuevo, podrá agregarse como otro libro a la estantería.</p>
+        </section>
+
         <section class="book-section" id="libro" aria-labelledby="book-title">
             <div class="book-toolbar">
                 <div>
-                    <p>ARCHIVE_READER</p>
-                    <h2 id="book-title">Registro de proyectos</h2>
+                    <p id="active-volume-label">ARCHIVE_READER / VOL.001</p>
+                    <h2 id="book-title">Field Notes</h2>
                 </div>
                 <div class="book-progress" aria-label="Progreso dentro del libro">
                     <span id="book-progress-bar"></span>

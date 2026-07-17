@@ -135,12 +135,38 @@ if ("IntersectionObserver" in window) {
 // Aparición progresiva y barras de avance.
 const revealElements = document.querySelectorAll(".reveal");
 const moduleRows = document.querySelectorAll(".module-row");
+const moduleTriggers = document.querySelectorAll(".module-trigger");
 
 function activateModule(row) {
     const progress = row.dataset.progress || "0";
-    const bar = row.querySelector(".module-load > div span");
+    const bar = row.querySelector(".module-load > span i");
     if (bar) bar.style.width = `${progress}%`;
 }
+
+// Submenús de exploración. Solo se mantiene un módulo abierto a la vez.
+moduleTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+        const selectedRow = trigger.closest(".module-row");
+        const willOpen = trigger.getAttribute("aria-expanded") !== "true";
+
+        moduleTriggers.forEach((otherTrigger) => {
+            otherTrigger.setAttribute("aria-expanded", "false");
+            otherTrigger.closest(".module-row").classList.remove("is-open");
+        });
+
+        trigger.setAttribute("aria-expanded", String(willOpen));
+        selectedRow.classList.toggle("is-open", willOpen);
+    });
+});
+
+// Contadores simulados: se reemplazarán por cantidades reales al cargar publicaciones.
+document.querySelectorAll("[data-random-count]").forEach((counter) => {
+    const minimum = Number(counter.dataset.min || 0);
+    const maximum = Number(counter.dataset.max || minimum);
+    const value = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+    counter.textContent = String(value).padStart(2, "0");
+    counter.setAttribute("aria-label", `${value} publicaciones simuladas`);
+});
 
 if (reduceMotion || !("IntersectionObserver" in window)) {
     revealElements.forEach((element) => element.classList.add("is-visible"));
