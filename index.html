@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de Crixuz enfocado en robótica, inteligencia artificial y sistemas interactivos.">
+    <meta name="theme-color" content="#03070d">
+
+    <title>Crixuz Lab | Robótica e IA</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body class="is-booting">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <div class="boot-screen" id="boot-screen" aria-live="polite">
+        <div class="boot-grid" aria-hidden="true"></div>
+        <div class="boot-corner boot-corner-tl">CRX // BOOT_SEQUENCE</div>
+        <div class="boot-corner boot-corner-tr">SYS.2026</div>
+        <div class="boot-corner boot-corner-bl">ROBOTICS × AI</div>
+        <div class="boot-corner boot-corner-br" id="boot-percent">000%</div>
+
+        <div class="boot-center">
+            <div class="boot-core" aria-hidden="true"><span></span><i></i></div>
+            <p class="tech-label">INITIALIZING PERSONAL LAB</p>
+            <h1>CRIXUZ<span>_</span></h1>
+            <p class="boot-message" id="boot-message">Verificando módulos...</p>
+            <div class="boot-track" aria-hidden="true"><span id="boot-bar"></span></div>
+            <button class="boot-skip" id="boot-skip" type="button">Saltar introducción</button>
+        </div>
+    </div>
+
+    <div class="page-progress" aria-hidden="true"><span id="page-progress-bar"></span></div>
+    <div class="screen-noise" aria-hidden="true"></div>
+
+    <header class="site-header" id="inicio">
+        <nav class="navbar container" aria-label="Navegación principal">
+            <a class="brand" href="#inicio" aria-label="Volver al inicio">
+                <span class="brand-symbol" aria-hidden="true"><i></i></span>
+                <span class="brand-copy"><strong>CRIXUZ</strong><small>PERSONAL LAB</small></span>
+            </a>
+
+            <div class="system-status" aria-label="Sistema en línea">
+                <span></span> SYS.ONLINE
+            </div>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+                <span class="sr-only">Abrir menú</span>
+                <i aria-hidden="true"></i><i aria-hidden="true"></i>
+            </button>
+
+            <div class="nav-links" id="nav-links">
+                <a href="#perfil">Perfil</a>
+                <a href="#enfoque">Enfoque</a>
+                <a href="#sistemas">Sistemas</a>
+                <a href="archivo.html">Archivo</a>
+            </div>
+
+            <a class="nav-cta" href="#contacto">Conectar <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
+
+    <main id="contenido">
+        <section class="hero container" aria-labelledby="hero-title">
+            <canvas class="neural-field" id="neural-field" aria-hidden="true"></canvas>
+
+            <div class="hero-rail" aria-hidden="true">
+                <span>LAT 19.4326</span>
+                <i></i>
+                <span>LONG −99.1332</span>
+            </div>
+
+            <div class="hero-copy reveal">
+                <p class="overline"><span>01</span> ROBÓTICA × INTELIGENCIA ARTIFICIAL</p>
+                <h1 id="hero-title">
+                    Diseño sistemas que
+                    <span class="kinetic-word" data-text="PIENSAN.">PIENSAN.</span>
+                    <span class="outline-word">APRENDEN.</span>
+                    <span class="accent-word">SE MUEVEN.</span>
+                </h1>
+                <p class="hero-description">
+                    Un laboratorio personal donde documento mi camino entre código, electrónica,
+                    automatización e inteligencia artificial.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="button button-primary magnetic" href="#sistemas">
+                        <span>Explorar sistemas</span><i aria-hidden="true">↘</i>
+                    </a>
+                    <a class="button button-ghost" href="archivo.html">
+                        Abrir bitácora <span aria-hidden="true">[ ↗ ]</span>
+                    </a>
+                </div>
+
+                <div class="hero-telemetry" aria-label="Telemetría del portafolio">
+                    <div><small>ESTADO</small><strong><span class="pulse-dot"></span> EN DESARROLLO</strong></div>
+                    <div><small>ENFOQUE</small><strong>ROBOTICS / AI</strong></div>
+                    <div><small>VERSIÓN</small><strong>02.00.26</strong></div>
+                </div>
+            </div>
+
+            <div class="hero-machine reveal" id="hero-machine" aria-label="Representación abstracta de un núcleo de inteligencia artificial">
+                <div class="machine-hud hud-top"><span>CORE_LINK</span><strong>98.7%</strong></div>
+                <div class="machine-hud hud-right"><span>NEURAL_FLOW</span><strong>ACTIVE</strong></div>
+                <div class="machine-hud hud-bottom"><span>SYNC</span><strong>00:01:42</strong></div>
+
+                <div class="core-assembly" aria-hidden="true">
+                    <div class="core-ring ring-a"></div>
+                    <div class="core-ring ring-b"></div>
+                    <div class="core-ring ring-c"></div>
+                    <div class="orbit-node node-a">AI</div>
+                    <div class="orbit-node node-b">01</div>
+                    <div class="orbit-node node-c">RX</div>
+                    <div class="core-center">
+                        <span></span>
+                        <i></i>
+                        <b>CRX</b>
+                    </div>
+                </div>
+
+                <div class="signal-panel" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+
+            <a class="scroll-cue" href="#perfil">
+                <span>SCROLL TO EXPLORE</span><i aria-hidden="true"></i>
+            </a>
+        </section>
+
+        <section class="section profile-section" id="perfil" aria-labelledby="profile-title">
+            <div class="section-index" aria-hidden="true">02</div>
+            <div class="container profile-grid">
+                <div class="section-heading reveal">
+                    <p class="overline"><span>02</span> OPERATOR_PROFILE</p>
+                    <h2 id="profile-title">Curiosidad técnica.<br><em>Construcción constante.</em></h2>
+                    <p>
+                        Mi objetivo es entender cómo la inteligencia sale de la pantalla y se convierte
+                        en decisiones, movimiento y soluciones para el mundo real.
+                    </p>
+                </div>
+
+                <div class="terminal-card reveal">
+                    <div class="terminal-head">
+                        <div><span></span><span></span><span></span></div>
+                        <p>operator_profile.sh</p>
+                        <small>SECURE</small>
+                    </div>
+                    <div class="terminal-body">
+                        <p><b>crx@lab:~$</b> identify --profile</p>
+                        <p class="terminal-output">→ Nombre público: <strong>Crixuz</strong></p>
+                        <p class="terminal-output">→ Rol actual: <strong>Explorador tecnológico</strong></p>
+                        <p class="terminal-output">→ Misión: <strong>Aprender · Construir · Documentar</strong></p>
+                        <p><b>crx@lab:~$</b> scan --interests</p>
+                        <div class="terminal-tags">
+                            <span>ROBOTICS</span><span>AI</span><span>AUTOMATION</span><span>WEB</span>
+                        </div>
+                        <p class="terminal-cursor"><b>crx@lab:~$</b> <span></span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section focus-section container" id="enfoque" aria-labelledby="focus-title">
+            <div class="section-heading section-heading-row reveal">
+                <div>
+                    <p class="overline"><span>03</span> LEARNING_MODULES</p>
+                    <h2 id="focus-title">Áreas de exploración.</h2>
+                </div>
+                <p>
+                    Los indicadores representan la construcción del portafolio, no un porcentaje
+                    absoluto de conocimiento. Crecerán con proyectos documentados.
+                </p>
+            </div>
+
+            <div class="module-list">
+                <article class="module-row reveal" data-progress="34">
+                    <div class="module-id">M.01</div>
+                    <div class="module-icon" aria-hidden="true"><span class="robot-icon-head"></span><i></i></div>
+                    <div class="module-copy">
+                        <p>HARDWARE + CONTROL</p>
+                        <h3>Robótica</h3>
+                        <span>Sensores · Actuadores · Control · Prototipado</span>
+                    </div>
+                    <div class="module-load">
+                        <div><span></span></div>
+                        <p><strong>34</strong>% / EN PROGRESO</p>
+                    </div>
+                    <span class="module-arrow" aria-hidden="true">↗</span>
+                </article>
+
+                <article class="module-row reveal" data-progress="47">
+                    <div class="module-id">M.02</div>
+                    <div class="module-icon neural-icon" aria-hidden="true"><span></span><i></i><b></b></div>
+                    <div class="module-copy">
+                        <p>DATA + MODELS</p>
+                        <h3>Inteligencia artificial</h3>
+                        <span>Machine Learning · Visión · Agentes · Datos</span>
+                    </div>
+                    <div class="module-load">
+                        <div><span></span></div>
+                        <p><strong>47</strong>% / EN PROGRESO</p>
+                    </div>
+                    <span class="module-arrow" aria-hidden="true">↗</span>
+                </article>
+
+                <article class="module-row reveal" data-progress="58">
+                    <div class="module-id">M.03</div>
+                    <div class="module-icon automation-icon" aria-hidden="true"><span>⚡</span></div>
+                    <div class="module-copy">
+                        <p>LOGIC + WORKFLOWS</p>
+                        <h3>Automatización</h3>
+                        <span>Integraciones · Procesos · APIs · Optimización</span>
+                    </div>
+                    <div class="module-load">
+                        <div><span></span></div>
+                        <p><strong>58</strong>% / EN PROGRESO</p>
+                    </div>
+                    <span class="module-arrow" aria-hidden="true">↗</span>
+                </article>
+
+                <article class="module-row reveal" data-progress="72">
+                    <div class="module-id">M.04</div>
+                    <div class="module-icon web-icon" aria-hidden="true">&lt;/&gt;</div>
+                    <div class="module-copy">
+                        <p>INTERFACE + MOTION</p>
+                        <h3>Desarrollo web</h3>
+                        <span>HTML · CSS · JavaScript · Experiencias interactivas</span>
+                    </div>
+                    <div class="module-load">
+                        <div><span></span></div>
+                        <p><strong>72</strong>% / EN PROGRESO</p>
+                    </div>
+                    <span class="module-arrow" aria-hidden="true">↗</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="section systems-section" id="sistemas" aria-labelledby="systems-title">
+            <div class="container">
+                <div class="section-heading section-heading-row reveal">
+                    <div>
+                        <p class="overline"><span>04</span> ACTIVE_SYSTEMS</p>
+                        <h2 id="systems-title">Proyectos que evolucionan.</h2>
+                    </div>
+                    <a class="text-link" href="archivo.html">VER ARCHIVO COMPLETO <span aria-hidden="true">↗</span></a>
+                </div>
+
+                <div class="systems-grid">
+                    <article class="system-card system-card-featured reveal">
+                        <div class="system-visual robot-visual" aria-hidden="true">
+                            <div class="radar-lines"></div>
+                            <div class="robot-face">
+                                <span></span><span></span><i></i>
+                            </div>
+                            <div class="tracking-box"><span>OBJECT_01</span></div>
+                            <p>VISION_FEED // 24 FPS</p>
+                        </div>
+                        <div class="system-copy">
+                            <div class="system-meta"><span>CONCEPTO 001</span><b>EN INVESTIGACIÓN</b></div>
+                            <h3>Percepción para sistemas robóticos</h3>
+                            <p>Exploración futura de visión por computadora para identificar objetos y convertir información visual en acciones.</p>
+                            <ul><li>Computer Vision</li><li>Robótica</li><li>Python</li></ul>
+                            <a href="archivo.html#libro">Abrir expediente <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </article>
+
+                    <article class="system-card reveal">
+                        <div class="system-visual ai-visual" aria-hidden="true">
+                            <div class="ai-grid"></div>
+                            <div class="ai-node ai-node-a"></div><div class="ai-node ai-node-b"></div><div class="ai-node ai-node-c"></div>
+                            <div class="ai-path path-a"></div><div class="ai-path path-b"></div>
+                            <p>NEURAL_MAP // LEARNING</p>
+                        </div>
+                        <div class="system-copy">
+                            <div class="system-meta"><span>CONCEPTO 002</span><b>PLANIFICADO</b></div>
+                            <h3>Agente de aprendizaje personal</h3>
+                            <p>Una futura herramienta para organizar conocimiento, registrar avances y proponer el siguiente reto.</p>
+                            <ul><li>AI Agents</li><li>Data</li></ul>
+                        </div>
+                    </article>
+
+                    <article class="system-card reveal">
+                        <div class="system-visual automation-visual" aria-hidden="true">
+                            <div class="flow-node">INPUT</div><i></i><div class="flow-node">LOGIC</div><i></i><div class="flow-node">ACTION</div>
+                            <p>AUTOMATION_FLOW // READY</p>
+                        </div>
+                        <div class="system-copy">
+                            <div class="system-meta"><span>CONCEPTO 003</span><b>PLANIFICADO</b></div>
+                            <h3>Automatización de procesos</h3>
+                            <p>Experimentos para conectar datos y tareas repetitivas en flujos más simples y confiables.</p>
+                            <ul><li>APIs</li><li>Workflows</li></ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section archive-teaser container reveal" aria-labelledby="archive-title">
+            <div class="archive-copy">
+                <p class="overline"><span>05</span> PROJECT_ARCHIVE</p>
+                <h2 id="archive-title">Cada proyecto merece una bitácora.</h2>
+                <p>
+                    El archivo conserva ideas, decisiones, errores y aprendizajes en un libro técnico
+                    interactivo. Una memoria viva del proceso, no solo del resultado.
+                </p>
+                <a class="button button-primary" href="archivo.html">Entrar al archivo <i aria-hidden="true">↗</i></a>
+            </div>
+
+            <a class="book-preview" href="archivo.html" aria-label="Abrir el libro de proyectos">
+                <div class="book-cover">
+                    <span>CRX // ARCHIVE</span>
+                    <div class="book-core" aria-hidden="true"><i></i><b></b></div>
+                    <h3>FIELD<br>NOTES</h3>
+                    <p>ROBOTICS · AI · SYSTEMS</p>
+                    <small>VOL. 001 / 2026</small>
+                </div>
+                <div class="book-pages" aria-hidden="true"></div>
+            </a>
+        </section>
+
+        <section class="section contact-section" id="contacto" aria-labelledby="contact-title">
+            <div class="contact-scan" aria-hidden="true"></div>
+            <div class="container contact-inner reveal">
+                <p class="overline"><span>06</span> OPEN_CHANNEL</p>
+                <h2 id="contact-title">La siguiente idea<br>puede comenzar <em>ahora.</em></h2>
+                <p>Sigue la evolución del laboratorio y consulta el código detrás de cada experimento.</p>
+                <a class="button button-primary magnetic" href="https://github.com/crixuz98" target="_blank" rel="noopener noreferrer">
+                    <span>github.com/crixuz98</span><i aria-hidden="true">↗</i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <a class="brand" href="#inicio">
+                <span class="brand-symbol" aria-hidden="true"><i></i></span>
+                <span class="brand-copy"><strong>CRIXUZ</strong><small>PERSONAL LAB</small></span>
+            </a>
+            <p>ROBÓTICA · INTELIGENCIA ARTIFICIAL · AUTOMATIZACIÓN</p>
+            <p>© <span id="current-year"></span> / BUILD <span id="build-time">00:00:00</span></p>
+        </div>
+    </footer>
+</body>
+</html>

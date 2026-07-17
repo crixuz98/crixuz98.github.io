@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bitácora histórica de proyectos de robótica, inteligencia artificial y automatización de Crixuz.">
+    <meta name="theme-color" content="#090c12">
+
+    <title>Archivo de proyectos | Crixuz Lab</title>
+
+    <link rel="stylesheet" href="css/archive.css">
+    <script src="js/archive.js" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#libro">Saltar al libro</a>
+    <div class="archive-noise" aria-hidden="true"></div>
+
+    <header class="archive-header">
+        <a class="archive-brand" href="index.html">
+            <span aria-hidden="true">←</span>
+            <strong>CRX // ARCHIVE</strong>
+        </a>
+        <p><span></span> DATABASE ONLINE</p>
+        <a href="index.html">VOLVER AL LAB</a>
+    </header>
+
+    <main>
+        <section class="archive-intro">
+            <p class="archive-kicker">PROJECT HISTORY / FIELD NOTES / VOL.001</p>
+            <h1>Bitácora de<br><em>sistemas futuros.</em></h1>
+            <p>
+                Un archivo vivo para documentar el proceso completo: hipótesis, prototipos,
+                decisiones, fallos, resultados y próximos pasos.
+            </p>
+            <div class="archive-instructions">
+                <span>← → PARA NAVEGAR</span>
+                <span>TECLADO COMPATIBLE</span>
+                <span id="archive-clock">00:00:00</span>
+            </div>
+        </section>
+
+        <section class="book-section" id="libro" aria-labelledby="book-title">
+            <div class="book-toolbar">
+                <div>
+                    <p>ARCHIVE_READER</p>
+                    <h2 id="book-title">Registro de proyectos</h2>
+                </div>
+                <div class="book-progress" aria-label="Progreso dentro del libro">
+                    <span id="book-progress-bar"></span>
+                </div>
+                <p id="spread-indicator" aria-live="polite">PLIEGO 01 / 05</p>
+            </div>
+
+            <div class="book-stage">
+                <div class="book-shadow" aria-hidden="true"></div>
+                <article class="project-book" id="project-book" aria-live="polite">
+                    <section class="book-page book-page-left" id="book-page-left"></section>
+                    <div class="book-spine" aria-hidden="true"><span></span></div>
+                    <section class="book-page book-page-right" id="book-page-right"></section>
+                    <div class="turning-sheet" aria-hidden="true"></div>
+                </article>
+            </div>
+
+            <div class="book-controls">
+                <button id="previous-page" type="button" aria-label="Ver páginas anteriores">
+                    <span aria-hidden="true">←</span> ANTERIOR
+                </button>
+                <p><span id="current-pages">01 — 02</span><small>USE LAS FLECHAS DEL TECLADO</small></p>
+                <button id="next-page" type="button" aria-label="Ver páginas siguientes">
+                    SIGUIENTE <span aria-hidden="true">→</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="archive-footer-cta">
+            <p>END OF CURRENT RECORD</p>
+            <h2>El próximo capítulo se escribe construyendo.</h2>
+            <a href="index.html#sistemas">Regresar a sistemas <span aria-hidden="true">↗</span></a>
+        </section>
+    </main>
+
+    <footer class="archive-footer">
+        <p>CRIXUZ PERSONAL LAB</p>
+        <p>ARCHIVE REV.02 / <span id="archive-year"></span></p>
+    </footer>
+</body>
+</html>
